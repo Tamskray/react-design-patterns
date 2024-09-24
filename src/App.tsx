@@ -1,17 +1,12 @@
-import { FC } from "react";
+import {
+  LeftSideComp,
+  RightSideComp,
+} from "./components/forTest/SideComponents/SideComponents";
+import LargeAuthorListItems from "./components/lists/authors/LargeListItems";
+import SmallAuthorListItems from "./components/lists/authors/SmallListItems";
+import RegularList from "./components/lists/RegularList";
 import SplitScreen from "./components/split-screen/SplitScreen";
-
-interface SideProps {
-  title: string;
-}
-
-const LeftSideComp: FC<SideProps> = ({ title }) => {
-  return <h2 style={{ backgroundColor: "crimson" }}>{title}</h2>;
-};
-
-const RightSideComp: FC<SideProps> = ({ title }) => {
-  return <h2 style={{ backgroundColor: "burlywood" }}>{title}</h2>;
-};
+import { authors } from "./data/authors";
 
 function App() {
   return (
@@ -20,6 +15,17 @@ function App() {
         <LeftSideComp title="Left" />
         <RightSideComp title={"Right"} />
       </SplitScreen>
+
+      <RegularList
+        items={authors}
+        sourceName={"author"}
+        ItemComponent={SmallAuthorListItems}
+      />
+      <RegularList
+        items={authors}
+        sourceName={"author"}
+        ItemComponent={LargeAuthorListItems}
+      />
     </>
   );
 }
