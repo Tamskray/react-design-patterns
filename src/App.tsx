@@ -2,11 +2,13 @@ import {
   LeftSideComp,
   RightSideComp,
 } from "./components/forTest/SideComponents/SideComponents";
-import LargeAuthorListItems from "./components/lists/authors/LargeListItems";
-import SmallAuthorListItems from "./components/lists/authors/SmallListItems";
-import RegularList from "./components/lists/RegularList";
+import Modal from "./components/modal/Modal";
 import SplitScreen from "./components/split-screen/SplitScreen";
-import { authors } from "./data/authors";
+
+// import LargeAuthorListItems from "./components/lists/authors/LargeListItems";
+// import SmallAuthorListItems from "./components/lists/authors/SmallListItems";
+// import RegularList from "./components/lists/RegularList";
+// import { authors } from "./data/authors";
 
 function App() {
   return (
@@ -16,7 +18,11 @@ function App() {
         <RightSideComp title={"Right"} />
       </SplitScreen>
 
-      <RegularList
+      <Modal>
+        <h2>Hello from Modal!</h2>
+      </Modal>
+
+      {/* <RegularList
         items={authors}
         sourceName={"author"}
         ItemComponent={SmallAuthorListItems}
@@ -25,7 +31,7 @@ function App() {
         items={authors}
         sourceName={"author"}
         ItemComponent={LargeAuthorListItems}
-      />
+      /> */}
     </>
   );
 }
